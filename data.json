@@ -1,0 +1,207 @@
+{
+  "fetch_date": "2026-03-07",
+  "description": "豆瓣2025年电视剧数据（评分7分以上）",
+  "total_count": 20,
+  "data": [
+    {
+      "title": "海市蜃楼",
+      "year": 2025,
+      "rating": 8.3,
+      "country": "中国大陆",
+      "genres": ["悬疑", "奇幻", "冒险", "古装"],
+      "director": "李洪绸 车志刚 邢冬冬",
+      "actors": ["费启鸣", "吕小雨"],
+      "url": "https://movie.douban.com/subject/36382628/"
+    },
+    {
+      "title": "骄阳似我",
+      "year": 2025,
+      "rating": 7.4,
+      "country": "中国大陆",
+      "genres": ["剧情", "爱情"],
+      "director": "陈宙飞",
+      "actors": ["宋威龙", "赵今麦"],
+      "url": "https://movie.douban.com/subject/35559998/"
+    },
+    {
+      "title": "唐诡奇谭",
+      "year": 2025,
+      "rating": 7.5,
+      "country": "中国大陆",
+      "genres": ["动作", "悬疑", "奇幻", "古装"],
+      "director": "郭世民",
+      "actors": ["杨旭文", "杨志刚"],
+      "url": "https://movie.douban.com/subject/36700715/"
+    },
+    {
+      "title": "反人类暴行",
+      "year": 2025,
+      "rating": 8.9,
+      "country": "中国大陆",
+      "genres": ["剧情", "历史"],
+      "director": "算",
+      "actors": ["江奇霖", "章宇"],
+      "url": "https://movie.douban.com/subject/37033221/"
+    },
+    {
+      "title": "辐射 第二季",
+      "year": 2025,
+      "rating": 8.2,
+      "country": "美国",
+      "genres": ["剧情", "动作", "科幻", "战争", "冒险"],
+      "director": "弗雷德里克·E·O·托耶 丽兹·弗德兰德 斯蒂芬·威廉姆斯 丽莎·乔伊",
+      "actors": ["艾拉·珀内尔", "阿伦·莫滕"],
+      "url": "https://movie.douban.com/subject/36846801/"
+    },
+    {
+      "title": "巅峰对决 第一季",
+      "year": 2025,
+      "rating": 8.8,
+      "country": "加拿大",
+      "genres": ["剧情", "爱情", "同性", "运动"],
+      "director": "雅各布·提尔尼",
+      "actors": ["哈德森·威廉姆斯", "康纳·斯托瑞"],
+      "url": "https://movie.douban.com/subject/37202886/"
+    },
+    {
+      "title": "狙击蝴蝶",
+      "year": 2025,
+      "rating": 7.0,
+      "country": "中国大陆",
+      "genres": ["剧情", "爱情"],
+      "director": "黄天仁 俞波",
+      "actors": ["陈妍希", "周柯宇"],
+      "url": "https://movie.douban.com/subject/36513485/"
+    },
+    {
+      "title": "公益律师",
+      "year": 2025,
+      "rating": 8.3,
+      "country": "韩国",
+      "genres": ["剧情", "喜剧"],
+      "director": "金善允",
+      "actors": ["郑敬淏", "苏珠妍"],
+      "url": "https://movie.douban.com/subject/37172430/"
+    },
+    {
+      "title": "斯巴达克斯：亚述家族",
+      "year": 2025,
+      "rating": 7.3,
+      "country": "美国",
+      "genres": ["剧情", "动作"],
+      "director": "里克·雅各布森",
+      "actors": ["尼克·塔拉贝", "格拉汉姆·麦克塔维什"],
+      "url": "https://movie.douban.com/subject/36240773/"
+    },
+    {
+      "title": "认罪之罪",
+      "year": 2025,
+      "rating": 7.5,
+      "country": "韩国",
+      "genres": ["剧情", "悬疑"],
+      "director": "李政孝",
+      "actors": ["全度妍", "金高银"],
+      "url": "https://movie.douban.com/subject/36075575/"
+    },
+    {
+      "title": "如果我不曾见过太阳 第二季",
+      "year": 2025,
+      "rating": 7.3,
+      "country": "中国台湾",
+      "genres": ["剧情", "爱情", "犯罪"],
+      "director": "蒋继正 简奇峰",
+      "actors": ["曾敬骅", "柯佳嬿"],
+      "url": "https://movie.douban.com/subject/36700740/"
+    },
+    {
+      "title": "韩国制造",
+      "year": 2025,
+      "rating": 7.2,
+      "country": "韩国",
+      "genres": ["剧情", "动作", "惊悚", "犯罪"],
+      "director": "禹民镐",
+      "actors": ["玄彬", "郑雨盛"],
+      "url": "https://movie.douban.com/subject/36774007/"
+    },
+    {
+      "title": "辉夜大小姐想让我告白：通往大人的阶梯",
+      "year": 2025,
+      "rating": 9.1,
+      "country": "日本",
+      "genres": ["喜剧", "爱情", "动画"],
+      "director": "畠山守",
+      "actors": ["古贺葵", "古川慎"],
+      "url": "https://movie.douban.com/subject/37406355/"
+    },
+    {
+      "title": "四方极爱2",
+      "year": 2025,
+      "rating": 8.5,
+      "country": "泰国",
+      "genres": ["爱情", "恐怖", "同性"],
+      "director": "西瓦·萨瓦玛尼固 Ko Nantalit Tampacha",
+      "actors": ["帕沙朋·简苏帕吉坤", "通琉维·梅塔帕·钦穆奎尔"],
+      "url": "https://movie.douban.com/subject/37227558/"
+    },
+    {
+      "title": "美妆搭档情人 第二季",
+      "year": 2025,
+      "rating": 7.4,
+      "country": "日本",
+      "genres": ["剧情", "同性"],
+      "director": "进藤丈广",
+      "actors": ["奥野壮", "丰田裕大"],
+      "url": "https://movie.douban.com/subject/37490481/"
+    },
+    {
+      "title": "时差一万公里",
+      "year": 2025,
+      "rating": 7.0,
+      "country": "中国大陆",
+      "genres": ["剧情"],
+      "director": "于小忱",
+      "actors": ["罗晋", "任素汐"],
+      "url": "https://movie.douban.com/subject/35688417/"
+    },
+    {
+      "title": "泰勒·斯威夫特：时代巡回演唱会，一个时代的结束",
+      "year": 2025,
+      "rating": 9.4,
+      "country": "美国",
+      "genres": ["纪录片", "歌舞"],
+      "director": "唐·阿格特 希娜·M·乔伊斯",
+      "actors": ["泰勒·斯威夫特", "安德里亚·斯威夫特"],
+      "url": "https://movie.douban.com/subject/37661892/"
+    },
+    {
+      "title": "哥本哈根测试",
+      "year": 2025,
+      "rating": 7.5,
+      "country": "美国",
+      "genres": ["动作", "科幻", "奇幻"],
+      "director": "杰特·威尔金森 尼玛·诺里扎德 凯文·坦查隆",
+      "actors": ["刘思慕", "梅丽莎·巴雷拉"],
+      "url": "https://movie.douban.com/subject/36778965/"
+    },
+    {
+      "title": "终末的女武神 第三季",
+      "year": 2025,
+      "rating": 7.1,
+      "country": "日本",
+      "genres": ["剧情", "动画"],
+      "director": "初见浩一",
+      "actors": ["石川界人", "置鲇龙太郎"],
+      "url": "https://movie.douban.com/subject/37273892/"
+    },
+    {
+      "title": "谎中之谎终为谎",
+      "year": 2025,
+      "rating": 7.0,
+      "country": "日本",
+      "genres": ["剧情", "悬疑"],
+      "director": "菊地凛子 锦户亮",
+      "actors": [],
+      "url": "https://movie.douban.com/subject/37898144/"
+    }
+  ]
+}

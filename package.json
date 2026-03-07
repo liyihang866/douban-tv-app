@@ -1,0 +1,15 @@
+{
+  "name": "douban-tv-2025",
+  "version": "1.0.0",
+  "description": "豆瓣2025年高分电视剧展示",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "14.0.4",
+    "react": "^18",
+    "react-dom": "^18"
+  }
+}
