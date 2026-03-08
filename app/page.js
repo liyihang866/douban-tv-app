@@ -84,6 +84,9 @@ export default function Home() {
         case 'rating':
           comparison = (b.rating || 0) - (a.rating || 0)
           break
+        case 'rating_count':
+          comparison = (b.rating_count || 0) - (a.rating_count || 0)
+          break
         case 'year':
           comparison = (b.year || 0) - (a.year || 0)
           break
@@ -232,6 +235,20 @@ export default function Home() {
               }}
             >
               评分 {sortBy === 'rating' && (sortOrder === 'desc' ? '↓' : '↑')}
+            </button>
+            <button
+              onClick={() => toggleSort('rating_count')}
+              style={{
+                padding: '8px 14px',
+                fontSize: '14px',
+                border: sortBy === 'rating_count' ? '2px solid #1976d2' : '1px solid #d0d0d0',
+                borderRadius: '4px',
+                backgroundColor: sortBy === 'rating_count' ? '#e3f2fd' : '#fff',
+                cursor: 'pointer',
+                fontWeight: sortBy === 'rating_count' ? '600' : '400'
+              }}
+            >
+              评论数 {sortBy === 'rating_count' && (sortOrder === 'desc' ? '↓' : '↑')}
             </button>
             <button
               onClick={() => toggleSort('year')}
