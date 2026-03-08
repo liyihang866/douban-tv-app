@@ -15,6 +15,10 @@ export default function Home() {
   const [sortBy, setSortBy] = useState('rating')
   const [sortOrder, setSortOrder] = useState('desc')
   
+  // 分页状态
+  const [currentPage, setCurrentPage] = useState(1)
+  const [itemsPerPage] = useState(20)
+  
   // 从 Supabase 加载数据
   useEffect(() => {
     async function loadData() {
@@ -102,6 +106,17 @@ export default function Home() {
     
     return result
   }, [tvShows, searchTerm, selectedCountry, selectedGenre, sortBy, sortOrder])
+  
+  // 分页逻辑
+  const totalPages = Math.ceil(filteredShows.length / itemsPerPage)
+  const startIndex = (currentPage - 1) * itemsPerPage
+  const endIndex = startIndex + itemsPerPage
+  const currentShows = filteredShows.slice(startIndex, endIndex)
+  
+  // 重置页码当过滤条件改变时
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [searchTerm, selectedCountry, selectedGenre, sortBy, sortOrder])
   
   // 切换排序
   const toggleSort = (type) => {
@@ -311,12 +326,13 @@ export default function Home() {
       
       {/* 电视剧列表 */}
       {filteredShows.length > 0 ? (
+        <>
         <div style={{ 
           display: 'grid', 
           gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', 
           gap: '20px' 
         }}>
-          {filteredShows.map((show, index) => (
+          {currentShows.map((show, index) => (
             <div key={show.id || index} style={{
               border: '1px solid #e0e0e0',
               borderRadius: '8px',
@@ -428,6 +444,89 @@ export default function Home() {
             </div>
           ))}
         </div>
+        
+        {/* 分页组件 */}
+        {totalPages > 1 && (
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginTop: '30px',
+            gap: '10px'
+          }}>
+            <button
+              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+              disabled={currentPage === 1}
+              style={{
+                padding: '10px 20px',
+                fontSize: '14px',
+                border: '1px solid #d0d0d0',
+                borderRadius: '4px',
+                backgroundColor: currentPage === 1 ? '#f5f5f5' : '#fff',
+                color: currentPage === 1 ? '#999' : '#333',
+                cursor: currentPage === 1 ? 'not-allowed' : 'pointer'
+              }}
+            >
+              上一页
+            </button>
+            
+            <div style={{ display: 'flex', gap: '5px' }}>
+              {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+                let pageNum;
+                if (totalPages <= 5) {
+                  pageNum = i + 1;
+                } else if (currentPage <= 3) {
+                  pageNum = i + 1;
+                } else if (currentPage >= totalPages - 2) {
+                  pageNum = totalPages - 4 + i;
+                } else {
+                  pageNum = currentPage - 2 + i;
+                }
+                
+                return (
+                  <button
+                    key={pageNum}
+                    onClick={() => setCurrentPage(pageNum)}
+                    style={{
+                      width: '40px',
+                      height: '40px',
+                      fontSize: '14px',
+                      border: currentPage === pageNum ? '2px solid #1976d2' : '1px solid #d0d0d0',
+                      borderRadius: '4px',
+                      backgroundColor: currentPage === pageNum ? '#e3f2fd' : '#fff',
+                      color: currentPage === pageNum ? '#1976d2' : '#333',
+                      cursor: 'pointer',
+                      fontWeight: currentPage === pageNum ? '600' : '400'
+                    }}
+                  >
+                    {pageNum}
+                  </button>
+                );
+              })}
+            </div>
+            
+            <button
+              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+              disabled={currentPage === totalPages}
+              style={{
+                padding: '10px 20px',
+                fontSize: '14px',
+                border: '1px solid #d0d0d0',
+                borderRadius: '4px',
+                backgroundColor: currentPage === totalPages ? '#f5f5f5' : '#fff',
+                color: currentPage === totalPages ? '#999' : '#333',
+                cursor: currentPage === totalPages ? 'not-allowed' : 'pointer'
+              }}
+            >
+              下一页
+            </button>
+            
+            <span style={{ marginLeft: '10px', color: '#666', fontSize: '14px' }}>
+              第 {currentPage} / {totalPages} 页
+            </span>
+          </div>
+        )}
+        </>
       ) : (
         <div style={{
           textAlign: 'center',
