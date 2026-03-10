@@ -12,7 +12,7 @@ export default function Home() {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCountry, setSelectedCountry] = useState('全部')
   const [selectedGenre, setSelectedGenre] = useState('全部')
-  const [sortBy, setSortBy] = useState('rating')
+  const [sortBy, setSortBy] = useState('combined')
   const [sortOrder, setSortOrder] = useState('desc')
   
   // 分页状态
@@ -97,6 +97,16 @@ export default function Home() {
         case 'title':
           comparison = (a.title || '').localeCompare(b.title || '', 'zh-CN')
           break
+        case 'combined': {
+          // 综合评分 = 评分(60%) + 归一化评论数(40%)
+          const maxCount = Math.max(...result.map(s => s.rating_count || 0))
+          const normalizeCount = (count) => maxCount > 0 ? (count || 0) / maxCount * 10 : 0
+          
+          const scoreA = (a.rating || 0) * 0.6 + normalizeCount(a.rating_count) * 0.4
+          const scoreB = (b.rating || 0) * 0.6 + normalizeCount(b.rating_count) * 0.4
+          comparison = scoreB - scoreA
+          break
+        }
         default:
           comparison = 0
       }
@@ -238,6 +248,20 @@ export default function Home() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <label style={{ fontSize: '14px', fontWeight: '500', color: '#666' }}>排序:</label>
             <button
+              onClick={() => toggleSort('combined')}
+              style={{
+                padding: '8px 14px',
+                fontSize: '14px',
+                border: sortBy === 'combined' ? '2px solid #1976d2' : '1px solid #d0d0d0',
+                borderRadius: '4px',
+                backgroundColor: sortBy === 'combined' ? '#e3f2fd' : '#fff',
+                cursor: 'pointer',
+                fontWeight: sortBy === 'combined' ? '600' : '400'
+              }}
+            >
+              综合 {sortBy === 'combined' && (sortOrder === 'desc' ? '↓' : '↑')}
+            </button>
+            <button
               onClick={() => toggleSort('rating')}
               style={{
                 padding: '8px 14px',
@@ -278,20 +302,6 @@ export default function Home() {
               }}
             >
               年份 {sortBy === 'year' && (sortOrder === 'desc' ? '↓' : '↑')}
-            </button>
-            <button
-              onClick={() => toggleSort('title')}
-              style={{
-                padding: '8px 14px',
-                fontSize: '14px',
-                border: sortBy === 'title' ? '2px solid #1976d2' : '1px solid #d0d0d0',
-                borderRadius: '4px',
-                backgroundColor: sortBy === 'title' ? '#e3f2fd' : '#fff',
-                cursor: 'pointer',
-                fontWeight: sortBy === 'title' ? '600' : '400'
-              }}
-            >
-              标题 {sortBy === 'title' && (sortOrder === 'desc' ? '↓' : '↑')}
             </button>
           </div>
           
